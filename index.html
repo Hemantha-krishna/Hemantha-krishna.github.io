@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hemantha Krishna Challa // Portfolio</title> <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Dark theme base */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* Tailwind gray-900 */
+            color: #d1d5db; /* Tailwind gray-300 */
+            /* Subtle grid background */
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        /* Use Fira Code for specific elements if desired */
+        .font-code {
+            font-family: 'Fira Code', monospace;
+        }
+        /* Neon Glow Effect Helper */
+        .neon-glow-cyan {
+            text-shadow: 0 0 5px rgba(34, 211, 238, 0.5), /* Tailwind cyan-400 */
+                         0 0 10px rgba(34, 211, 238, 0.3);
+        }
+        .neon-glow-green {
+             text-shadow: 0 0 5px rgba(52, 211, 153, 0.6), /* Tailwind emerald-400 */
+                          0 0 10px rgba(52, 211, 153, 0.4);
+        }
+        .neon-border-glow-cyan {
+            box-shadow: 0 0 8px rgba(34, 211, 238, 0.4),
+                        0 0 15px rgba(34, 211, 238, 0.2),
+                        inset 0 0 3px rgba(34, 211, 238, 0.3);
+        }
+         .neon-border-glow-blue {
+            box-shadow: 0 0 8px rgba(96, 165, 250, 0.4), /* blue-400 */
+                        0 0 15px rgba(96, 165, 250, 0.2),
+                        inset 0 0 3px rgba(96, 165, 250, 0.3);
+        }
+
+        /* Card hover effect */
+        .tech-card-hover {
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            border-width: 1px;
+            border-color: transparent; /* Start transparent */
+        }
+        .tech-card-hover:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: #22d3ee; /* Tailwind cyan-400 */
+            box-shadow: 0 0 15px rgba(34, 211, 238, 0.3), 0 0 25px rgba(34, 211, 238, 0.1);
+        }
+
+        /* Section heading style */
+        .tech-section-heading {
+             font-family: 'Fira Code', monospace;
+             text-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+        }
+        .tech-section-heading::after {
+            content: ''; display: block; width: 60px; height: 2px;
+            /* Animated gradient */
+            background: linear-gradient(90deg, #14b8a6, #22d3ee, #a78bfa); /* teal, cyan, violet */
+            background-size: 200% 100%;
+            animation: gradient-shift 4s linear infinite;
+            margin: 10px auto 0; border-radius: 1px;
+        }
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Mobile Menu Adjustments */
+        #mobile-menu { display: none; background-color: #1f2937; /* gray-800 */ }
+        #mobile-menu.open { display: block; }
+
+        /* Typing Cursor for Hero */
+        .typing-cursor::after {
+            content: '_';
+            display: inline-block;
+            margin-left: 3px;
+            animation: blink 0.7s infinite;
+            color: #22d3ee; /* cyan-400 */
+            font-weight: bold;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        /* Fade-in animation */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in-element { animation: fadeIn 0.7s ease-out forwards; opacity: 0; }
+        .stagger-1 { animation-delay: 0.1s; } .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; } .stagger-4 { animation-delay: 0.4s; }
+        .stagger-5 { animation-delay: 0.5s; } .stagger-6 { animation-delay: 0.6s; }
+        .stagger-7 { animation-delay: 0.7s; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-gray-900/80 backdrop-blur-md shadow-lg shadow-cyan-500/5 sticky top-0 z-50 border-b border-gray-700/50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-medium text-white font-code hover:text-cyan-400 transition duration-300 neon-glow-cyan">HKChalla<span class="text-cyan-400">.dev</span></a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300 font-medium">/about</a>
+                <a href="#projects" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300 font-medium">/projects</a>
+                <a href="#skills" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300 font-medium">/skills</a>
+                <a href="#contact" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300 font-medium">/contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" aria-expanded="false" class="text-gray-400 hover:text-cyan-400 focus:outline-none transition duration-300">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="md:hidden border-t border-gray-700/50">
+            <a href="#about" class="block py-3 px-6 text-gray-300 hover:bg-gray-700 hover:text-cyan-400 transition duration-300 font-medium">/about</a>
+            <a href="#projects" class="block py-3 px-6 text-gray-300 hover:bg-gray-700 hover:text-cyan-400 transition duration-300 font-medium">/projects</a>
+            <a href="#skills" class="block py-3 px-6 text-gray-300 hover:bg-gray-700 hover:text-cyan-400 transition duration-300 font-medium">/skills</a>
+            <a href="#contact" class="block py-3 px-6 text-gray-300 hover:bg-gray-700 hover:text-cyan-400 transition duration-300 font-medium">/contact</a>
+        </div>
+    </header>
+
+    <section id="hero" class="relative text-white py-32 md:py-48 overflow-hidden min-h-screen flex items-center">
+         <div class="absolute inset-0 bg-gray-900 z-0">
+             </div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-5 fade-in-element stagger-1 text-gray-100">Hemantha Krishna Challa</h1>
+            <p class="text-xl md:text-3xl mb-10 text-cyan-400 font-code fade-in-element stagger-2 neon-glow-cyan">
+                <span id="typing-effect"></span><span class="typing-cursor"></span>
+            </p>
+            <a href="#projects" class="inline-flex items-center bg-cyan-500 text-gray-900 font-semibold py-3 px-8 rounded-md hover:bg-cyan-400 transition duration-300 shadow-lg shadow-cyan-500/30 text-lg fade-in-element stagger-3 transform hover:scale-105">
+                Explore Projects
+                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                   <path stroke-linecap="round" stroke-linejoin="round" d="M17 13l-5 5m0 0l-5-5m5 5V6" />
+                 </svg>
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-gray-800/50 border-t border-b border-gray-700/50">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-100 tech-section-heading fade-in-element">Whoami</h2> <div class="bg-gray-800 p-8 md:p-10 rounded-lg shadow-xl neon-border-glow-blue flex flex-col lg:flex-row items-center gap-8 lg:gap-12 fade-in-element stagger-1">
+                 <img src="IMG-20240922-WA0012(1).jpg" alt="Hemantha Krishna Challa" class="w-40 h-40 md:w-48 md:h-48 rounded-full mx-auto lg:mx-0 flex-shrink-0 object-cover border-4 border-blue-500 shadow-md fade-in-element stagger-2"
+                      onerror="this.onerror=null; this.src='https://placehold.co/200x200/1F2937/9CA3AF?text=Photo';">
+                <div class="text-center lg:text-left">
+                    <p class="text-gray-300 leading-relaxed mb-4 text-lg fade-in-element stagger-3">
+                        Hello! I'm Hemantha, currently pursuing a Master's in Computer Science (Cybersecurity Track) at UT Dallas[cite: 2]. My foundation is a B.Tech in CS with a Cybersecurity specialization from SRMAP University[cite: 3]. Based in McKinney, TX[cite: 1].
+                    </p>
+                    <p class="text-gray-300 leading-relaxed mb-6 text-lg fade-in-element stagger-4">
+                        Passionate about network security, threat analysis, and secure system development[cite: 3]. I thrive on translating complex challenges into secure, efficient solutions, utilizing skills in cryptography, vulnerability assessment, and more[cite: 3].
+                    </p>
+                    <a href="Resume.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center mt-4 bg-blue-600 text-white font-medium py-2.5 px-6 rounded-md hover:bg-blue-500 transition duration-300 transform hover:scale-105 fade-in-element stagger-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        View Resume.pdf
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-100 tech-section-heading fade-in-element">./Projects</h2> <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden tech-card-hover flex flex-col fade-in-element stagger-1">
+                    <img src="https://placehold.co/600x400/0F172A/14B8A6?text=SecureFS" alt="Encrypted File System" class="w-full h-52 object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/0F172A/cccccc?text=Project+Image';">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-semibold mb-2 text-teal-400 font-code">Encrypted File System</h3>
+                        <p class="text-gray-400 mb-4 text-sm flex-grow">Secure file system using AES-128, SHA-256, HMAC integrity checks, PBKDF2 key derivation, and optimized block storage[cite: 8].</p>
+                        <p class="text-xs text-gray-500 mb-5 font-code">Tech: C/C++, AES, SHA, HMAC, PBKDF2</p>
+                        <div class="flex justify-between items-center mt-auto pt-4 border-t border-gray-700">
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="project-link text-cyan-400 hover:text-cyan-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                                Demo
+                            </a>
+                             <a href="#" target="_blank" rel="noopener noreferrer" class="project-link text-gray-500 hover:text-gray-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l-4 4M6 16l-4-4m0 0l4-4m-4 4h16" /></svg>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden tech-card-hover flex flex-col fade-in-element stagger-2">
+                     <img src="https://placehold.co/600x400/0F172A/6366F1?text=PhotoShare" alt="Photo Sharing App" class="w-full h-52 object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/0F172A/cccccc?text=Project+Image';">
+                    <div class="p-6 flex flex-col flex-grow">
+                         <h3 class="text-xl font-semibold mb-2 text-indigo-400 font-code">Photo Sharing App</h3>
+                        <p class="text-gray-400 mb-4 text-sm flex-grow">Full-stack MERN app with secure user auth, session management, and input validation[cite: 9].</p>
+                        <p class="text-xs text-gray-500 mb-5 font-code">Tech: MongoDB, Express, React, Node.js</p>
+                         <div class="flex justify-between items-center mt-auto pt-4 border-t border-gray-700">
+                             <a href="#" target="_blank" rel="noopener noreferrer" class="project-link text-cyan-400 hover:text-cyan-300">
+                               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                                Demo
+                            </a>
+                             <a href="#" target="_blank" rel="noopener noreferrer" class="project-link text-gray-500 hover:text-gray-400">
+                               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l-4 4M6 16l-4-4m0 0l4-4m-4 4h16" /></svg>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden tech-card-hover flex flex-col fade-in-element stagger-3">
+                      <img src="https://placehold.co/600x400/0F172A/EC4899?text=ML+IDS+XAI" alt="ML Intrusion Detection" class="w-full h-52 object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/0F172A/cccccc?text=Project+Image';">
+                    <div class="p-6 flex flex-col flex-grow">
+                         <h3 class="text-xl font-semibold mb-2 text-pink-400 font-code">ML Intrusion Detection + XAI</h3>
+                        <p class="text-gray-400 mb-4 text-sm flex-grow">Developed & evaluated ML models (LogReg, RF, DT, etc.) for IDS, applying XAI (SHAP, LIME) for interpretability[cite: 5, 6].</p>
+                        <p class="text-xs text-gray-500 mb-5 font-code">Tech: Python, Scikit-learn, SHAP, LIME</p>
+                         <div class="flex justify-between items-center mt-auto pt-4 border-t border-gray-700">
+                             <a href="#" target="_blank" rel="noopener noreferrer" class="project-link text-cyan-400 hover:text-cyan-300">
+                               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                                Paper
+                            </a>
+                             <a href="#" target="_blank" rel="noopener noreferrer" class="project-link text-gray-500 hover:text-gray-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l-4 4M6 16l-4-4m0 0l4-4m-4 4h16" /></svg>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <style>.project-link { font-size: 0.875rem; font-weight: 500; transition: color 0.3s ease; }</style>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-24 bg-gray-800/50 border-t border-b border-gray-700/50">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-100 tech-section-heading fade-in-element">$ Skills</h2> <div class="bg-gray-800 p-8 md:p-12 rounded-lg shadow-xl neon-border-glow-cyan fade-in-element stagger-1">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div class="fade-in-element stagger-2">
+                        <h3 class="skill-heading text-cyan-400">Cybersecurity</h3>
+                        <div class="skill-list">
+                            <span>Network Security</span><span>Threat Analysis</span><span>IDS</span><span>Cryptography</span><span>Vulnerability Assessment</span><span>Risk Management</span><span>Wireshark</span><span>NIST Concepts</span>
+                        </div>
+                    </div>
+                     <div class="fade-in-element stagger-3">
+                        <h3 class="skill-heading text-green-400">Programming</h3>
+                        <div class="skill-list">
+                           <span>Python</span><span>C/C++</span><span>Java</span><span>Bash</span>
+                        </div>
+                    </div>
+                     <div class="fade-in-element stagger-4">
+                        <h3 class="skill-heading text-pink-400">Web Development</h3>
+                        <div class="skill-list">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>ReactJS</span><span>Node.js</span>
+                        </div>
+                    </div>
+                    <div class="fade-in-element stagger-5">
+                         <h3 class="skill-heading text-blue-400">OS & Virtualization</h3>
+                        <div class="skill-list">
+                            <span>Linux</span><span>Docker</span><span>Kubernetes</span><span>VMs</span>
+                        </div>
+                    </div>
+                     <div class="fade-in-element stagger-6">
+                         <h3 class="skill-heading text-yellow-400">Databases</h3>
+                        <div class="skill-list">
+                            <span>MySQL</span><span>MongoDB</span>
+                        </div>
+                    </div>
+                    <div class="fade-in-element stagger-7">
+                        <h3 class="skill-heading text-gray-400">Tools</h3>
+                        <div class="skill-list">
+                           <span>Git / GitHub</span><span>MS Office</span>
+                        </div>
+                    </div>
+                </div>
+                <style>
+                    .skill-heading { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem; font-family: 'Fira Code', monospace; }
+                    .skill-list span {
+                        display: inline-block; background-color: #374151; /* gray-700 */ color: #d1d5db; /* gray-300 */
+                        padding: 5px 12px; border-radius: 4px; margin: 4px; font-size: 0.875rem;
+                        border: 1px solid #4b5563; /* gray-600 */
+                        transition: background-color 0.3s ease, border-color 0.3s ease;
+                    }
+                    .skill-list span:hover { background-color: #4b5563; border-color: #6b7280; color: #fff; }
+                </style>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24">
+        <div class="container mx-auto px-6 max-w-3xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-100 tech-section-heading fade-in-element">Contact();</h2> <p class="text-gray-400 mb-10 leading-relaxed text-lg fade-in-element stagger-1">
+                Open to new opportunities and collaborations in Cybersecurity & CS. Let's connect!
+            </p>
+            <a href="mailto:hxc230046@utdallas.edu" class="inline-flex items-center bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold py-3 px-8 rounded-md hover:from-cyan-400 hover:to-blue-400 transition duration-300 shadow-lg shadow-cyan-500/20 text-lg fade-in-element stagger-2 transform hover:scale-105">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 -ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                Initiate Contact
+            </a>
+            <div class="mt-12 flex justify-center space-x-8 fade-in-element stagger-3">
+                 <a href="https://github.com/Hemantha-krishna" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-cyan-400 transition duration-300 transform hover:scale-110" title="GitHub Profile">
+                    <span class="sr-only">GitHub</span>
+                    <svg class="w-9 h-9" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.201 2.397.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                 </a>
+                 <a href="https://www.linkedin.com/in/hemantha-krishna-challa/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-400 transition duration-300 transform hover:scale-110" title="LinkedIn Profile">
+                     <span class="sr-only">LinkedIn</span>
+                     <svg class="w-9 h-9" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                 </a>
+                 <a href="https://tryhackme.com/p/CrispyLeaf" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-red-500 transition duration-300 transform hover:scale-110" title="TryHackMe Profile">
+                     <span class="sr-only">TryHackMe</span>
+                     <svg class="w-9 h-9" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M6.5 10.75h11v2.5h-4.25V19h-2.5v-5.75H6.5v-2.5z M12 5c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm0 12c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/>
+                     </svg>
+                 </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 border-t border-gray-700/50 text-gray-500 py-8">
+        <div class="container mx-auto px-6 text-center text-sm">
+            &copy; 2025 Hemantha Krishna Challa // Built with <span class="text-cyan-400">Tailwind CSS</span> & <span class="text-red-500">&hearts;</span> <br>
+            <span class="text-xs text-gray-600 mt-1 block">// End of Transmission</span>
+        </div>
+    </footer>
+
+    <script>
+        // --- Mobile Menu Toggle ---
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+            menuButton.setAttribute('aria-expanded', !isExpanded);
+        });
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                setTimeout(() => {
+                   mobileMenu.classList.remove('open');
+                   menuButton.setAttribute('aria-expanded', 'false');
+                }, 150);
+            });
+        });
+
+        // --- Typing Effect ---
+        const typingElement = document.getElementById('typing-effect');
+        const words = [
+            "Cybersecurity Specialist",
+            "Full-Stack Developer",
+            "Problem Solver",
+            "Network Security Enthusiast"
+        ];
+        let wordIndex = 0;
+        let letterIndex = 0;
+        let currentWord = '';
+        let isDeleting = false;
+
+        function type() {
+            // Check if typingElement exists before proceeding
+            if (!typingElement) return;
+
+            const word = words[wordIndex];
+            if (isDeleting) {
+                currentWord = word.substring(0, letterIndex - 1);
+                letterIndex--;
+            } else {
+                currentWord = word.substring(0, letterIndex + 1);
+                letterIndex++;
+            }
+
+            typingElement.textContent = currentWord;
+
+            let typeSpeed = isDeleting ? 80 : 150;
+
+            if (!isDeleting && letterIndex === word.length) {
+                typeSpeed = 1500; // Pause at end of word
+                isDeleting = true;
+            } else if (isDeleting && letterIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                typeSpeed = 500; // Pause before typing new word
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+
+        // Start typing effect only if the element exists
+        if (typingElement) {
+            document.addEventListener('DOMContentLoaded', type);
+        }
+
+
+        // --- Nav Link Active State (Basic Example) ---
+        // More robust implementation would use Intersection Observer API
+        const navLinks = document.querySelectorAll('.nav-link');
+        window.addEventListener('scroll', () => {
+            let currentSection = '';
+            const sections = document.querySelectorAll('section[id]');
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                // Check if pageYOffset is defined (it might not be in all environments)
+                const scrollPosition = typeof pageYOffset !== 'undefined' ? pageYOffset : document.documentElement.scrollTop;
+
+                if (scrollPosition >= sectionTop - 100) { // Adjust offset as needed
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-cyan-400', 'font-semibold'); // Remove active style
+                link.classList.add('text-gray-300'); // Ensure default style is present
+
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.remove('text-gray-300');
+                    link.classList.add('text-cyan-400', 'font-semibold'); // Add active style
+                }
+            });
+        });
+
+    </script>
+
+</body>
+</html>
