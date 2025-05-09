@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hemantha Krishna Challa // Portfolio</title>
+    <title>Hemantha Krishna Challa - Personal Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,27 +43,30 @@
                         inset 0 0 3px rgba(96, 165, 250, 0.3);
         }
 
-        /* Card hover effect */
+        /* Card hover effect - Reverted to simpler version */
         .tech-card-hover {
             transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
             border-width: 1px;
-            border-color: transparent; /* Start transparent */
+            border-color: transparent; 
         }
         .tech-card-hover:hover {
             transform: translateY(-5px) scale(1.02);
             border-color: #22d3ee; /* Tailwind cyan-400 */
             box-shadow: 0 0 15px rgba(34, 211, 238, 0.3), 0 0 25px rgba(34, 211, 238, 0.1);
         }
+         .tech-card-hover img { /* Ensure image opacity transition is smooth if used */
+            transition: opacity 0.3s ease;
+        }
 
-        /* Section heading style */
+
+        /* Section heading style - Reverted to simpler version */
         .tech-section-heading {
              font-family: 'Fira Code', monospace;
              text-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
         }
         .tech-section-heading::after {
             content: ''; display: block; width: 60px; height: 2px;
-            /* Animated gradient */
-            background: linear-gradient(90deg, #14b8a6, #22d3ee, #a78bfa); /* teal, cyan, violet */
+            background: linear-gradient(90deg, #14b8a6, #22d3ee, #a78bfa); 
             background-size: 200% 100%;
             animation: gradient-shift 4s linear infinite;
             margin: 10px auto 0; border-radius: 1px;
@@ -100,6 +103,44 @@
         .stagger-7 { animation-delay: 0.7s; } .stagger-8 { animation-delay: 0.8s; }
         .stagger-9 { animation-delay: 0.9s; } .stagger-10 { animation-delay: 1.0s; }
         .stagger-11 { animation-delay: 1.1s; } .stagger-12 { animation-delay: 1.2s; }
+        
+        /* Enhanced Button Styles - Reverted to simpler hover */
+        .cta-button-hero, .cta-button-secondary, .contact-button {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+        }
+        .cta-button-hero:hover {
+            transform: scale(1.05); /* Simpler scale */
+        }
+        .cta-button-secondary:hover {
+             transform: scale(1.05); /* Simpler scale */
+        }
+        .contact-button:hover {
+             transform: scale(1.05); /* Simpler scale */
+        }
+
+        /* Skill Tag Polish - Reverted to simpler hover */
+        .skill-list span {
+            display: inline-block; background-color: #374151; /* gray-700 */ color: #d1d5db; /* gray-300 */
+            padding: 5px 12px; border-radius: 4px; margin: 4px; font-size: 0.875rem;
+            border: 1px solid #4b5563; /* gray-600 */
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        .skill-list span:hover { 
+            background-color: #4b5563; 
+            border-color: #6b7280; 
+            color: #fff; 
+        }
+
+        /* Social Icon Hover - Reverted to simpler hover */
+        .social-icon-hover {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .social-icon-hover:hover {
+            transform: scale(1.10); /* Simpler scale */
+        }
+        
+        /* Custom Scrollbar for WebKit - Removed */
+
     </style>
 </head>
 <body class="antialiased">
@@ -109,6 +150,7 @@
             <a href="#" class="text-2xl font-medium text-white font-code hover:text-cyan-400 transition duration-300 neon-glow-cyan">HKC<span class="text-cyan-400">.hack</span></a>
             <div class="hidden md:flex space-x-8">
                 <a href="#about" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300 font-medium">/about</a>
+                <a href="#education" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300 font-medium">/education</a>
                 <a href="#projects" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300 font-medium">/projects</a>
                 <a href="#skills" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300 font-medium">/skills</a>
                 <a href="#experience" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300 font-medium">/experience</a>
@@ -124,6 +166,7 @@
         </nav>
         <div id="mobile-menu" class="md:hidden border-t border-gray-700/50">
             <a href="#about" class="block py-3 px-6 text-gray-300 hover:bg-gray-700 hover:text-cyan-400 transition duration-300 font-medium">/about</a>
+            <a href="#education" class="block py-3 px-6 text-gray-300 hover:bg-gray-700 hover:text-cyan-400 transition duration-300 font-medium">/education</a>
             <a href="#projects" class="block py-3 px-6 text-gray-300 hover:bg-gray-700 hover:text-cyan-400 transition duration-300 font-medium">/projects</a>
             <a href="#skills" class="block py-3 px-6 text-gray-300 hover:bg-gray-700 hover:text-cyan-400 transition duration-300 font-medium">/skills</a>
             <a href="#experience" class="block py-3 px-6 text-gray-300 hover:bg-gray-700 hover:text-cyan-400 transition duration-300 font-medium">/experience</a>
@@ -132,14 +175,13 @@
     </header>
 
     <section id="hero" class="relative text-white py-32 md:py-48 overflow-hidden min-h-screen flex items-center">
-         <div class="absolute inset-0 bg-gray-900 z-0">
-             </div>
+         <div class="absolute inset-0 bg-gray-900 z-0"></div> 
         <div class="container mx-auto px-6 text-center relative z-10">
             <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-5 fade-in-element stagger-1 text-gray-100">Hemantha Krishna Challa</h1>
             <p class="text-xl md:text-3xl mb-10 text-cyan-400 font-code fade-in-element stagger-2 neon-glow-cyan">
                 <span id="typing-effect"></span><span class="typing-cursor"></span>
             </p>
-            <a href="#projects" class="inline-flex items-center bg-cyan-500 text-gray-900 font-semibold py-3 px-8 rounded-md hover:bg-cyan-400 transition duration-300 shadow-lg shadow-cyan-500/30 text-lg fade-in-element stagger-3 transform hover:scale-105">
+            <a href="#projects" class="cta-button-hero inline-flex items-center bg-cyan-500 text-gray-900 font-semibold py-3 px-8 rounded-md hover:bg-cyan-400 transition duration-300 shadow-lg shadow-cyan-500/30 text-lg fade-in-element stagger-3">
                 Explore Projects
                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 13l-5 5m0 0l-5-5m5 5V6" />
@@ -153,15 +195,15 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-100 tech-section-heading fade-in-element">Whoami</h2>
             <div class="bg-gray-800 p-8 md:p-10 rounded-lg shadow-xl neon-border-glow-blue flex flex-col lg:flex-row items-center gap-8 lg:gap-12 fade-in-element stagger-1">
                  <img src="IMG-20240922-WA0012(1).jpg" alt="Hemantha Krishna Challa" class="w-40 h-40 md:w-48 md:h-48 rounded-full mx-auto lg:mx-0 flex-shrink-0 object-cover border-4 border-blue-500 shadow-md fade-in-element stagger-2"
-                      onerror="this.onerror=null; this.src='https://placehold.co/200x200/1F2937/9CA3AF?text=Photo';">
+                       onerror="this.onerror=null; this.src='https://placehold.co/200x200/1F2937/9CA3AF?text=Photo';">
                 <div class="text-center lg:text-left">
                     <p class="text-gray-300 leading-relaxed mb-4 text-lg fade-in-element stagger-3">
-                        Hello! I'm Krishna, and I am a motivated Master's student in Computer Science at UT Dallas, specializing in Cybersecurity (expected graduation: May 2026, GPA 3.33).
+                        Hello! I'm Krishna, and I am a motivated Master's student in Computer Science at UT Dallas, specializing in Cybersecurity (expected graduation: May 2026, GPA 3.67).
                     </p>
                     <p class="text-gray-300 leading-relaxed mb-6 text-lg fade-in-element stagger-4">
                         I have a strong foundation in cybersecurity principles (Network Security, IDS, Vulnerability Assessment), programming (Python, Java, C++), and full-stack web development (React, Node.js). I've demonstrated my practical skills through projects like an encrypted file system and secure web applications, complemented by published research in ML for MEC and Intrusion Detection. Seeking challenging opportunities to apply and expand technical expertise. I'm currently studying for CompTIA Security+ certification.
                     </p>
-                    <a href="Resume.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center mt-4 bg-blue-600 text-white font-medium py-2.5 px-6 rounded-md hover:bg-blue-500 transition duration-300 transform hover:scale-105 fade-in-element stagger-5">
+                    <a href="Resume.pdf" target="_blank" rel="noopener noreferrer" class="cta-button-secondary inline-flex items-center mt-4 bg-blue-600 text-white font-medium py-2.5 px-6 rounded-md hover:bg-blue-500 transition duration-300 fade-in-element stagger-5">
                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                          </svg>
@@ -172,13 +214,39 @@
         </div>
     </section>
 
-    <section id="projects" class="py-24">
+    <section id="education" class="py-24">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-100 tech-section-heading fade-in-element">Education</h2>
+            <div class="space-y-12">
+                <div class="bg-gray-800 p-8 md:p-10 rounded-lg shadow-xl neon-border-glow-cyan fade-in-element stagger-1">
+                    <h3 class="text-2xl font-semibold text-cyan-400 font-code mb-2">The University of Texas at Dallas</h3>
+                    <p class="text-gray-300 text-lg mb-1">Master of Science, Computer Science with Cybersecurity track</p>
+                    <p class="text-gray-400 text-sm mb-1">Expected Graduation: May 2026</p>
+                    <p class="text-gray-400 text-sm mb-3">GPA: 3.67</p>
+                    <ul class="list-disc list-inside text-gray-300 space-y-1 pl-2">
+                        <li>NSA CAE Designations (Expected): Graduate Level Designation in Cyber Operations (CAE-CyberOps); Graduate Certificate in Cyber Defense (CAE-CDE)</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 p-8 md:p-10 rounded-lg shadow-xl neon-border-glow-blue fade-in-element stagger-2">
+                    <h3 class="text-2xl font-semibold text-blue-400 font-code mb-2">SRMAP University, AP, India</h3>
+                    <p class="text-gray-300 text-lg mb-1">Bachelor of Technology, Computer Science, specializing in Cybersecurity</p>
+                    <p class="text-gray-400 text-sm mb-1">Graduated: May 2024</p>
+                    <p class="text-gray-400 text-sm mb-3">GPA: 3.60</p>
+                     <ul class="list-disc list-inside text-gray-300 space-y-1 pl-2">
+                        <li>Awarded 50% merit-based scholarship for academic achievement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 bg-gray-800/50 border-t border-b border-gray-700/50">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-100 tech-section-heading fade-in-element">./Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
                 <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden tech-card-hover flex flex-col fade-in-element stagger-1">
-                    <img src="https://placehold.co/600x400/0F172A/EC4899?text=Web+Security" alt="Web Security Exploits & Defenses" class="w-full h-52 object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                    <img src="https://placehold.co/600x400/0F172A/EC4899?text=Web+Security" alt="Web Security Exploits & Defenses" class="w-full h-52 object-cover opacity-80"
                          onerror="this.onerror=null; this.src='https://placehold.co/600x400/0F172A/cccccc?text=Project+Image';">
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-semibold mb-2 text-pink-400 font-code">Web Security Exploits & Defenses</h3>
@@ -191,7 +259,7 @@
                 </div>
 
                 <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden tech-card-hover flex flex-col fade-in-element stagger-2">
-                    <img src="https://placehold.co/600x400/0F172A/8B5CF6?text=Software+Vulns" alt="Software Vulnerability Exploits" class="w-full h-52 object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                    <img src="https://placehold.co/600x400/0F172A/8B5CF6?text=Software+Vulns" alt="Software Vulnerability Exploits" class="w-full h-52 object-cover opacity-80"
                          onerror="this.onerror=null; this.src='https://placehold.co/600x400/0F172A/cccccc?text=Project+Image';">
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-semibold mb-2 text-violet-400 font-code">Software Vulnerability Exploits</h3>
@@ -204,7 +272,7 @@
                 </div>
                 
                 <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden tech-card-hover flex flex-col fade-in-element stagger-3">
-                    <img src="https://placehold.co/600x400/0F172A/14B8A6?text=SecureFS" alt="Encrypted File System" class="w-full h-52 object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                    <img src="https://placehold.co/600x400/0F172A/14B8A6?text=SecureFS" alt="Encrypted File System" class="w-full h-52 object-cover opacity-80"
                          onerror="this.onerror=null; this.src='https://placehold.co/600x400/0F172A/cccccc?text=Project+Image';">
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-semibold mb-2 text-teal-400 font-code">Encrypted File System</h3>
@@ -212,16 +280,16 @@
                         <p class="text-xs text-gray-500 mb-5 font-code">Tech: Java, AES, CTR Mode, SHA, MAC</p>
                         <div class="flex justify-between items-center mt-auto pt-4 border-t border-gray-700">
                              <a href="https://github.com/Hemantha-krishna/EncryptedFileSystem" target="_blank" rel="noopener noreferrer" class="project-link text-gray-500 hover:text-gray-400">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l-4 4M6 16l-4-4m0 0l4-4m-4 4h16" /></svg>
-                                Code
-                            </a>
+                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l-4 4M6 16l-4-4m0 0l4-4m-4 4h16" /></svg>
+                                 Code
+                             </a>
                              <p class="text-xs text-gray-600">Course Project</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden tech-card-hover flex flex-col fade-in-element stagger-4">
-                    <img src="https://placehold.co/600x400/0F172A/22D3EE?text=G-COD" alt="Grained Control Over Database" class="w-full h-52 object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                    <img src="https://placehold.co/600x400/0F172A/22D3EE?text=G-COD" alt="Grained Control Over Database" class="w-full h-52 object-cover opacity-80"
                          onerror="this.onerror=null; this.src='https://placehold.co/600x400/0F172A/cccccc?text=Project+Image';">
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-xl font-semibold mb-2 text-cyan-400 font-code">Grained Control Over Database (G-COD)</h3>
@@ -229,117 +297,117 @@
                         <p class="text-xs text-gray-500 mb-5 font-code">Tech: ReactJS, NodeJS, JavaScript, MySQL, AWS RDS, Crypto</p>
                         <div class="flex justify-between items-center mt-auto pt-4 border-t border-gray-700">
                              <a href="https://github.com/alisid03/DataAppAndSecProj" target="_blank" rel="noopener noreferrer" class="project-link text-gray-500 hover:text-gray-400">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l-4 4M6 16l-4-4m0 0l4-4m-4 4h16" /></svg>
-                                Code
-                            </a>
+                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l-4 4M6 16l-4-4m0 0l4-4m-4 4h16" /></svg>
+                                 Code
+                             </a>
                             <p class="text-xs text-gray-600">Course Project</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden tech-card-hover flex flex-col fade-in-element stagger-5">
-                     <img src="https://placehold.co/600x400/0F172A/6366F1?text=PhotoShare" alt="Photo Sharing App" class="w-full h-52 object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
-                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/0F172A/cccccc?text=Project+Image';">
+                     <img src="https://placehold.co/600x400/0F172A/6366F1?text=PhotoShare" alt="Photo Sharing App" class="w-full h-52 object-cover opacity-80"
+                           onerror="this.onerror=null; this.src='https://placehold.co/600x400/0F172A/cccccc?text=Project+Image';">
                     <div class="p-6 flex flex-col flex-grow">
                          <h3 class="text-xl font-semibold mb-2 text-indigo-400 font-code">Photo Sharing App</h3>
                         <p class="text-gray-400 mb-4 text-sm flex-grow">Full-stack MERN app with secure user auth, session management, and input validation.</p>
                         <p class="text-xs text-gray-500 mb-5 font-code">Tech: MongoDB, Express, React, Node.js</p>
                          <div class="flex justify-end items-center mt-auto pt-4 border-t border-gray-700">
                              <a href="https://github.com/Hemantha-krishna/Photo-Sharing-App" target="_blank" rel="noopener noreferrer" class="project-link text-gray-500 hover:text-gray-400">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l-4 4M6 16l-4-4m0 0l4-4m-4 4h16" /></svg>
-                                Code
-                            </a>
+                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l-4 4M6 16l-4-4m0 0l4-4m-4 4h16" /></svg>
+                                 Code
+                             </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden tech-card-hover flex flex-col fade-in-element stagger-6">
-                      <img src="https://placehold.co/600x400/0F172A/EC4899?text=ML+IDS+XAI" alt="ML Intrusion Detection" class="w-full h-52 object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
-                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/0F172A/cccccc?text=Project+Image';">
+                      <img src="https://placehold.co/600x400/0F172A/EC4899?text=ML+IDS+XAI" alt="ML Intrusion Detection" class="w-full h-52 object-cover opacity-80"
+                           onerror="this.onerror=null; this.src='https://placehold.co/600x400/0F172A/cccccc?text=Project+Image';">
                     <div class="p-6 flex flex-col flex-grow">
                          <h3 class="text-xl font-semibold mb-2 text-pink-400 font-code">ML Intrusion Detection + XAI</h3>
                          <p class="text-gray-400 mb-4 text-sm flex-grow">Developed & evaluated ML models (LogReg, RF, DT, KNN, SVM) for network intrusion detection, applying XAI (SHAP, LIME) for interpretability. Under review for journal publication.</p>
                         <p class="text-xs text-gray-500 mb-5 font-code">Tech: Python, Scikit-learn, SHAP, LIME</p>
                          <div class="flex justify-end items-center mt-auto pt-4 border-t border-gray-700">
                              <a href="https://github.com/Hemantha-krishna/ML-IDS-with-XAI" target="_blank" rel="noopener noreferrer" class="project-link text-gray-500 hover:text-gray-400">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l-4 4M6 16l-4-4m0 0l4-4m-4 4h16" /></svg>
-                                Code
-                            </a>
+                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l-4 4M6 16l-4-4m0 0l4-4m-4 4h16" /></svg>
+                                 Code
+                             </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden tech-card-hover flex flex-col fade-in-element stagger-7">
-                      <img src="https://placehold.co/600x400/0F172A/3B82F6?text=MEC+Task+Offloading" alt="MEC Task Offloading" class="w-full h-52 object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
-                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/0F172A/cccccc?text=Project+Image';">
+                      <img src="https://placehold.co/600x400/0F172A/3B82F6?text=MEC+Task+Offloading" alt="MEC Task Offloading" class="w-full h-52 object-cover opacity-80"
+                           onerror="this.onerror=null; this.src='https://placehold.co/600x400/0F172A/cccccc?text=Project+Image';">
                     <div class="p-6 flex flex-col flex-grow">
                          <h3 class="text-xl font-semibold mb-2 text-blue-400 font-code">MEC Task Offloading</h3>
                         <p class="text-gray-400 mb-4 text-sm flex-grow">Analyzed ML algorithms for optimizing task offloading decisions in Mobile Edge Computing environments. Published in IEEE Xplore after presentation at IEEE ASSIC 2024.</p>
                         <p class="text-xs text-gray-500 mb-5 font-code">Tech: Machine Learning, Edge Computing, Python</p>
                          <div class="flex justify-between items-center mt-auto pt-4 border-t border-gray-700">
                              <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10507901&isnumber=10507806" target="_blank" rel="noopener noreferrer" class="project-link text-cyan-400 hover:text-cyan-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-                                Publication
-                            </a>
+                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                                 Publication
+                             </a>
                              <a href="https://github.com/Hemantha-krishna/DDLO-vs-DROO" target="_blank" rel="noopener noreferrer" class="project-link text-gray-500 hover:text-gray-400">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l-4 4M6 16l-4-4m0 0l4-4m-4 4h16" /></svg>
-                                Code
-                            </a>
+                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l-4 4M6 16l-4-4m0 0l4-4m-4 4h16" /></svg>
+                                 Code
+                             </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden tech-card-hover flex flex-col fade-in-element stagger-8">
-                      <img src="https://placehold.co/600x400/0F172A/F472B6?text=Keylogger" alt="Advanced Keylogger" class="w-full h-52 object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
-                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/0F172A/cccccc?text=Project+Image';">
+                      <img src="https://placehold.co/600x400/0F172A/F472B6?text=Keylogger" alt="Advanced Keylogger" class="w-full h-52 object-cover opacity-80"
+                           onerror="this.onerror=null; this.src='https://placehold.co/600x400/0F172A/cccccc?text=Project+Image';">
                     <div class="p-6 flex flex-col flex-grow">
                          <h3 class="text-xl font-semibold mb-2 text-pink-400 font-code">Advanced Keylogger</h3>
                         <p class="text-gray-400 mb-4 text-sm flex-grow">Developed an advanced keylogger using Python for educational purposes, focusing on stealthy data capture techniques and secure logging mechanisms.</p>
                         <p class="text-xs text-gray-500 mb-5 font-code">Tech: Python, OS Interaction</p>
                          <div class="flex justify-end items-center mt-auto pt-4 border-t border-gray-700">
                              <a href="https://github.com/Hemantha-krishna/Advanced-Keylogger" target="_blank" rel="noopener noreferrer" class="project-link text-gray-500 hover:text-gray-400">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l-4 4M6 16l-4-4m0 0l4-4m-4 4h16" /></svg>
-                                Code
-                            </a>
+                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l-4 4M6 16l-4-4m0 0l4-4m-4 4h16" /></svg>
+                                 Code
+                             </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden tech-card-hover flex flex-col fade-in-element stagger-9">
-                      <img src="https://placehold.co/600x400/0F172A/F59E0B?text=Restaurant+Site" alt="Restaurant Website" class="w-full h-52 object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
-                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/0F172A/cccccc?text=Project+Image';">
+                      <img src="https://placehold.co/600x400/0F172A/F59E0B?text=Restaurant+Site" alt="Restaurant Website" class="w-full h-52 object-cover opacity-80"
+                           onerror="this.onerror=null; this.src='https://placehold.co/600x400/0F172A/cccccc?text=Project+Image';">
                     <div class="p-6 flex flex-col flex-grow">
                          <h3 class="text-xl font-semibold mb-2 text-amber-500 font-code">Restaurant Website</h3>
                         <p class="text-gray-400 mb-4 text-sm flex-grow">A simple and clean website interface for a restaurant, built using fundamental web technologies.</p>
                         <p class="text-xs text-gray-500 mb-5 font-code">Tech: HTML, CSS, JavaScript</p>
                          <div class="flex justify-between items-center mt-auto pt-4 border-t border-gray-700">
                              <a href="https://hemantha-krishna.github.io/Restaurant-Website/index.html" target="_blank" rel="noopener noreferrer" class="project-link text-cyan-400 hover:text-cyan-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-                                Demo
-                            </a>
+                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                                 Demo
+                             </a>
                              <a href="https://github.com/Hemantha-krishna/Restaurant-Website" target="_blank" rel="noopener noreferrer" class="project-link text-gray-500 hover:text-gray-400">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l-4 4M6 16l-4-4m0 0l4-4m-4 4h16" /></svg>
-                                Code
-                            </a>
+                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l-4 4M6 16l-4-4m0 0l4-4m-4 4h16" /></svg>
+                                 Code
+                             </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden tech-card-hover flex flex-col fade-in-element stagger-10">
-                      <img src="https://placehold.co/600x400/0F172A/A78BFA?text=Scripts" alt="Scripts Collection" class="w-full h-52 object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
-                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/0F172A/cccccc?text=Project+Image';">
+                      <img src="https://placehold.co/600x400/0F172A/A78BFA?text=Scripts" alt="Scripts Collection" class="w-full h-52 object-cover opacity-80"
+                           onerror="this.onerror=null; this.src='https://placehold.co/600x400/0F172A/cccccc?text=Project+Image';">
                     <div class="p-6 flex flex-col flex-grow">
                          <h3 class="text-xl font-semibold mb-2 text-violet-400 font-code">Scripts</h3>
                         <p class="text-gray-400 mb-4 text-sm flex-grow">Collection of useful scripts including an Automated File Backup utility and a Random Password Generator.</p>
                         <p class="text-xs text-gray-500 mb-5 font-code">Tech: Python, Scripting</p>
                          <div class="flex justify-between items-center mt-auto pt-4 border-t border-gray-700 space-x-4"> <a href="https://github.com/Hemantha-krishna/Automated-File-Backup" target="_blank" rel="noopener noreferrer" class="project-link text-gray-500 hover:text-gray-400">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l-4 4M6 16l-4-4m0 0l4-4m-4 4h16" /></svg>
-                                Backup Script
-                            </a>
+                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l-4 4M6 16l-4-4m0 0l4-4m-4 4h16" /></svg>
+                                 Backup Script
+                             </a>
                              <a href="https://github.com/Hemantha-krishna/RandomPasswordGenerator" target="_blank" rel="noopener noreferrer" class="project-link text-gray-500 hover:text-gray-400">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l-4 4M6 16l-4-4m0 0l4-4m-4 4h16" /></svg>
-                                Password Gen
-                            </a>
+                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l-4 4M6 16l-4-4m0 0l4-4m-4 4h16" /></svg>
+                                 Password Gen
+                             </a>
                         </div>
                     </div>
                 </div>
@@ -360,13 +428,13 @@
                             <span>Network Security</span><span>Threat Analysis</span><span>IDS</span><span>Cryptography</span><span>Vulnerability Assessment</span><span>Risk Management</span><span>Wireshark</span><span>NIST Framework</span><span>Security Log Analysis</span>
                         </div>
                     </div>
-                     <div class="fade-in-element stagger-3">
+                    <div class="fade-in-element stagger-3">
                         <h3 class="skill-heading text-green-400">Programming</h3>
                         <div class="skill-list">
                             <span>Python</span><span>C</span><span>C++</span><span>Java</span><span>Bash</span>
                         </div>
                     </div>
-                     <div class="fade-in-element stagger-4">
+                    <div class="fade-in-element stagger-4">
                         <h3 class="skill-heading text-pink-400">Web Development</h3>
                         <div class="skill-list">
                             <span>HTML</span><span>CSS</span><span>JavaScript</span><span>ReactJS</span><span>Node.js</span>
@@ -378,7 +446,7 @@
                             <span>Linux (Ubuntu, Fedora, Arch)</span><span>Virtual Machines (VMs)</span>
                         </div>
                     </div>
-                     <div class="fade-in-element stagger-6">
+                    <div class="fade-in-element stagger-6">
                          <h3 class="skill-heading text-yellow-400">Databases & Other</h3>
                         <div class="skill-list">
                             <span>MySQL</span><span>MongoDB</span><span>MS Office Suite</span><span>Git</span>
@@ -392,14 +460,20 @@
                     </div>
                 </div>
                 <style>
-                    .skill-heading { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem; font-family: 'Fira Code', monospace; }
-                    .skill-list span {
-                        display: inline-block; background-color: #374151; /* gray-700 */ color: #d1d5db; /* gray-300 */
-                        padding: 5px 12px; border-radius: 4px; margin: 4px; font-size: 0.875rem;
-                        border: 1px solid #4b5563; /* gray-600 */
-                        transition: background-color 0.3s ease, border-color 0.3s ease;
-                    }
-                    .skill-list span:hover { background-color: #4b5563; border-color: #6b7280; color: #fff; }
+                     .skill-heading { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem; font-family: 'Fira Code', monospace; }
+                     .skill-list span {
+                         display: inline-block; background-color: #374151; /* gray-700 */ color: #d1d5db; /* gray-300 */
+                         padding: 6px 14px; border-radius: 6px; margin: 5px; font-size: 0.9rem;
+                         border: 1px solid #4b5563; /* gray-600 */
+                         transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+                     }
+                     .skill-list span:hover { 
+                         background-color: #4b5563; /* gray-500 */
+                         border-color: #22d3ee; /* cyan-400 */
+                         color: #fff; 
+                         transform: translateY(-2px);
+                         box-shadow: 0 0 10px rgba(34, 211, 238, 0.3);
+                     }
                 </style>
             </div>
         </div>
@@ -434,20 +508,19 @@
             <p class="text-gray-400 mb-10 leading-relaxed text-lg fade-in-element stagger-1">
                 Open to new opportunities and collaborations in Cybersecurity & CS. Let's connect!
             </p>
-            <a href="mailto:hxc230046@utdallas.edu" class="inline-flex items-center bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold py-3 px-8 rounded-md hover:from-cyan-400 hover:to-blue-400 transition duration-300 shadow-lg shadow-cyan-500/20 text-lg fade-in-element stagger-2 transform hover:scale-105">
+            <a href="mailto:hxc230046@utdallas.edu" class="cta-button-secondary contact-button inline-flex items-center bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold py-3 px-8 rounded-md hover:from-cyan-400 hover:to-blue-400 transition duration-300 shadow-lg shadow-cyan-500/20 text-lg fade-in-element stagger-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 -ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                 Initiate Contact
             </a>
             <div class="mt-12 flex justify-center space-x-8 fade-in-element stagger-3">
-                 <a href="https://github.com/Hemantha-krishna.github.io" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-cyan-400 transition duration-300 transform hover:scale-110" title="GitHub Profile">
-                    <span class="sr-only">GitHub</span>
+                 <a href="https://github.com/Hemantha-krishna" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-cyan-400 social-icon-hover" title="GitHub Profile"> <span class="sr-only">GitHub</span>
                     <svg class="w-9 h-9" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.201 2.397.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
                  </a>
-                 <a href="https://www.linkedin.com/in/hemantha-krishna-challa/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-400 transition duration-300 transform hover:scale-110" title="LinkedIn Profile">
+                 <a href="https://www.linkedin.com/in/hemantha-krishna-challa/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-400 social-icon-hover" title="LinkedIn Profile">
                      <span class="sr-only">LinkedIn</span>
                      <svg class="w-9 h-9" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                  </a>
-                 <a href="https://tryhackme.com/p/CrispyLeaf" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-red-500 transition duration-300 transform hover:scale-110" title="TryHackMe Profile">
+                 <a href="https://tryhackme.com/p/CrispyLeaf" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-red-500 social-icon-hover" title="TryHackMe Profile">
                      <span class="sr-only">TryHackMe</span>
                      <svg class="w-9 h-9" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                          <path d="M6.5 10.75h11v2.5h-4.25V19h-2.5v-5.75H6.5v-2.5z M12 5c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm0 12c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/>
@@ -468,106 +541,112 @@
         // --- Mobile Menu Toggle ---
         const menuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = mobileMenu.querySelectorAll('a');
+        const mobileLinks = mobileMenu.querySelectorAll('a'); // Get all links within the mobile menu
 
         menuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('open');
+            mobileMenu.classList.toggle('open'); // Toggle the 'open' class to show/hide menu
             const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
-            menuButton.setAttribute('aria-expanded', !isExpanded);
+            menuButton.setAttribute('aria-expanded', !isExpanded); // Update aria-expanded attribute for accessibility
         });
+
+        // Add click event listener to each mobile menu link to close the menu after clicking
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
-                // Add a small delay to allow navigation before closing
+                // Add a small delay to allow navigation to happen before closing the menu
                 setTimeout(() => {
-                   mobileMenu.classList.remove('open');
-                   menuButton.setAttribute('aria-expanded', 'false');
-                }, 150);
+                   mobileMenu.classList.remove('open'); // Close the menu
+                   menuButton.setAttribute('aria-expanded', 'false'); // Update aria-expanded
+                }, 150); // 150ms delay
             });
         });
 
         // --- Typing Effect ---
         const typingElement = document.getElementById('typing-effect');
-         const words = [
+         const words = [ // Array of words to type
             "Cybersecurity Enthusiast", 
             "Full-Stack Developer",
             "Problem Solver",
             "Network Security Enthusiast",
             "Computer Science Graduate"
         ];
-        let wordIndex = 0;
-        let letterIndex = 0;
-        let currentWord = '';
-        let isDeleting = false;
+        let wordIndex = 0; // Current word index
+        let letterIndex = 0; // Current letter index in the word
+        let currentWord = ''; // The current word being typed or deleted
+        let isDeleting = false; // State to check if currently deleting
 
         function type() {
             // Check if typingElement exists before proceeding
             if (!typingElement) return;
 
-            const word = words[wordIndex];
+            const word = words[wordIndex]; // Get the current word from the array
+            // Logic for typing or deleting
             if (isDeleting) {
-                currentWord = word.substring(0, letterIndex - 1);
+                currentWord = word.substring(0, letterIndex - 1); // Remove the last letter
                 letterIndex--;
             } else {
-                currentWord = word.substring(0, letterIndex + 1);
+                currentWord = word.substring(0, letterIndex + 1); // Add the next letter
                 letterIndex++;
             }
 
-            typingElement.textContent = currentWord;
+            typingElement.textContent = currentWord; // Update the text content
 
-            let typeSpeed = isDeleting ? 80 : 150;
+            let typeSpeed = isDeleting ? 80 : 150; // Set typing/deleting speed
 
-            if (!isDeleting && letterIndex === word.length) {
+            // Conditions to switch between typing, pausing, and deleting
+            if (!isDeleting && letterIndex === word.length) { // Word fully typed
                 typeSpeed = 1500; // Pause at end of word
-                isDeleting = true;
-            } else if (isDeleting && letterIndex === 0) {
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
+                isDeleting = true; // Switch to deleting state
+            } else if (isDeleting && letterIndex === 0) { // Word fully deleted
+                isDeleting = false; // Switch to typing state
+                wordIndex = (wordIndex + 1) % words.length; // Move to the next word
                 typeSpeed = 500; // Pause before typing new word
             }
 
-            setTimeout(type, typeSpeed);
+            setTimeout(type, typeSpeed); // Call the type function again after the delay
         }
 
         // Start typing effect only if the element exists and DOM is ready
         if (typingElement) {
-            document.addEventListener('DOMContentLoaded', type);
+            document.addEventListener('DOMContentLoaded', type); // Start typing when the DOM is fully loaded
         }
 
 
         // --- Nav Link Active State (Basic Example) ---
-        // More robust implementation would use Intersection Observer API
-        const navLinks = document.querySelectorAll('.nav-link');
-        const headerHeight = document.querySelector('header')?.offsetHeight || 60; // Get header height or default
+        // A more robust implementation would use the Intersection Observer API for better performance
+        const navLinks = document.querySelectorAll('.nav-link'); // Get all navigation links
+        const headerHeight = document.querySelector('header')?.offsetHeight || 60; // Get header height or use a default
 
         window.addEventListener('scroll', () => {
-            let currentSection = '';
-            const sections = document.querySelectorAll('section[id]');
-            // Check if pageYOffset is defined (it might not be in all environments)
-            const scrollPosition = (typeof window.pageYOffset !== 'undefined' ? window.pageYOffset : document.documentElement.scrollTop) + headerHeight + 20; // Add offset for header
+            let currentSection = ''; // To store the ID of the current section in view
+            const sections = document.querySelectorAll('section[id]'); // Get all sections with an ID
+            
+            // Determine current scroll position, accounting for header height
+            const scrollPosition = (typeof window.pageYOffset !== 'undefined' ? window.pageYOffset : document.documentElement.scrollTop) + headerHeight + 20; 
 
+            // Iterate over sections to find which one is currently in view
             sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop; // Top offset of the section
+                const sectionHeight = section.offsetHeight; // Height of the section
                 if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    currentSection = section.getAttribute('id');
+                    currentSection = section.getAttribute('id'); // Set current section ID
                 }
             });
 
-             // Handle edge case for top of page or bottom
-            if (scrollPosition < sections[0]?.offsetTop + headerHeight) {
-                 currentSection = sections[0]?.getAttribute('id') || ''; // Default to first section or empty
-            } else if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) { // Near bottom
-                 currentSection = sections[sections.length - 1]?.getAttribute('id') || ''; // Default to last section
+             // Handle edge cases for the top of the page or when scrolled to the very bottom
+            if (scrollPosition < sections[0]?.offsetTop + headerHeight) { // If near the top, before the first section
+                 currentSection = sections[0]?.getAttribute('id') || ''; 
+            } else if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) { // If near the bottom of the page
+                 currentSection = sections[sections.length - 1]?.getAttribute('id') || ''; 
             }
 
-
+            // Update navigation link styles based on the current section
             navLinks.forEach(link => {
-                link.classList.remove('text-cyan-400', 'font-semibold'); // Remove active style
+                link.classList.remove('text-cyan-400', 'font-semibold'); // Remove active styles
                 link.classList.add('text-gray-300'); // Ensure default style is present
 
-                if (link.getAttribute('href') === `#${currentSection}`) {
+                if (link.getAttribute('href') === `#${currentSection}`) { // If link matches current section
                     link.classList.remove('text-gray-300');
-                    link.classList.add('text-cyan-400', 'font-semibold'); // Add active style
+                    link.classList.add('text-cyan-400', 'font-semibold'); // Add active styles
                 }
             });
         });
