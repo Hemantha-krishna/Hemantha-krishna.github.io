@@ -513,7 +513,8 @@
                 Initiate Contact
             </a>
             <div class="mt-12 flex justify-center space-x-8 fade-in-element stagger-3">
-                 <a href="https://github.com/Hemantha-krishna" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-cyan-400 social-icon-hover" title="GitHub Profile"> <span class="sr-only">GitHub</span>
+                 <a href="https://github.com/Hemantha-krishna" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-cyan-400 social-icon-hover" title="GitHub Profile"> 
+                    <span class="sr-only">GitHub</span>
                     <svg class="w-9 h-9" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.201 2.397.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
                  </a>
                  <a href="https://www.linkedin.com/in/hemantha-krishna-challa/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-blue-400 social-icon-hover" title="LinkedIn Profile">
@@ -532,8 +533,7 @@
 
     <footer class="bg-gray-900 border-t border-gray-700/50 text-gray-500 py-8">
         <div class="container mx-auto px-6 text-center text-sm">
-            &copy; 2025 Hemantha Krishna Challa // Built with <span class="text-cyan-400">Tailwind CSS</span> & <span class="text-red-500">&hearts;</span> <br>
-            <span class="text-xs text-gray-600 mt-1 block">McKinney, TX 75070 | (945) 276-1755 | hxc230046@utdallas.edu</span>
+            &copy; 2025 Hemantha Krishna Challa // Built with <span class="text-cyan-400">Tailwind CSS</span> & <span class="text-red-500">&hearts;</span>
         </div>
     </footer>
 
@@ -541,115 +541,120 @@
         // --- Mobile Menu Toggle ---
         const menuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = mobileMenu.querySelectorAll('a'); // Get all links within the mobile menu
+        const mobileLinks = mobileMenu.querySelectorAll('a');
 
         menuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('open'); // Toggle the 'open' class to show/hide menu
+            mobileMenu.classList.toggle('open');
             const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
-            menuButton.setAttribute('aria-expanded', !isExpanded); // Update aria-expanded attribute for accessibility
+            menuButton.setAttribute('aria-expanded', !isExpanded);
         });
-
-        // Add click event listener to each mobile menu link to close the menu after clicking
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
-                // Add a small delay to allow navigation to happen before closing the menu
+                // Add a small delay to allow navigation before closing
                 setTimeout(() => {
-                   mobileMenu.classList.remove('open'); // Close the menu
-                   menuButton.setAttribute('aria-expanded', 'false'); // Update aria-expanded
-                }, 150); // 150ms delay
+                   mobileMenu.classList.remove('open');
+                   menuButton.setAttribute('aria-expanded', 'false');
+                }, 150);
             });
         });
 
         // --- Typing Effect ---
         const typingElement = document.getElementById('typing-effect');
-         const words = [ // Array of words to type
+         const words = [
             "Cybersecurity Enthusiast", 
             "Full-Stack Developer",
             "Problem Solver",
             "Network Security Enthusiast",
             "Computer Science Graduate"
         ];
-        let wordIndex = 0; // Current word index
-        let letterIndex = 0; // Current letter index in the word
-        let currentWord = ''; // The current word being typed or deleted
-        let isDeleting = false; // State to check if currently deleting
+        let wordIndex = 0;
+        let letterIndex = 0;
+        let currentWord = '';
+        let isDeleting = false;
 
         function type() {
             // Check if typingElement exists before proceeding
             if (!typingElement) return;
 
-            const word = words[wordIndex]; // Get the current word from the array
-            // Logic for typing or deleting
+            const word = words[wordIndex];
             if (isDeleting) {
-                currentWord = word.substring(0, letterIndex - 1); // Remove the last letter
+                currentWord = word.substring(0, letterIndex - 1);
                 letterIndex--;
             } else {
-                currentWord = word.substring(0, letterIndex + 1); // Add the next letter
+                currentWord = word.substring(0, letterIndex + 1);
                 letterIndex++;
             }
 
-            typingElement.textContent = currentWord; // Update the text content
+            typingElement.textContent = currentWord;
 
-            let typeSpeed = isDeleting ? 80 : 150; // Set typing/deleting speed
+            let typeSpeed = isDeleting ? 80 : 150;
 
-            // Conditions to switch between typing, pausing, and deleting
-            if (!isDeleting && letterIndex === word.length) { // Word fully typed
+            if (!isDeleting && letterIndex === word.length) {
                 typeSpeed = 1500; // Pause at end of word
-                isDeleting = true; // Switch to deleting state
-            } else if (isDeleting && letterIndex === 0) { // Word fully deleted
-                isDeleting = false; // Switch to typing state
-                wordIndex = (wordIndex + 1) % words.length; // Move to the next word
+                isDeleting = true;
+            } else if (isDeleting && letterIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
                 typeSpeed = 500; // Pause before typing new word
             }
 
-            setTimeout(type, typeSpeed); // Call the type function again after the delay
+            setTimeout(type, typeSpeed);
         }
 
         // Start typing effect only if the element exists and DOM is ready
         if (typingElement) {
-            document.addEventListener('DOMContentLoaded', type); // Start typing when the DOM is fully loaded
+            document.addEventListener('DOMContentLoaded', type);
         }
 
 
         // --- Nav Link Active State (Basic Example) ---
-        // A more robust implementation would use the Intersection Observer API for better performance
-        const navLinks = document.querySelectorAll('.nav-link'); // Get all navigation links
-        const headerHeight = document.querySelector('header')?.offsetHeight || 60; // Get header height or use a default
+        // More robust implementation would use Intersection Observer API
+        const navLinks = document.querySelectorAll('.nav-link');
+        const header = document.getElementById('main-header'); // Use ID for header
+        const headerHeight = header?.offsetHeight || 60; // Get header height or default
 
         window.addEventListener('scroll', () => {
-            let currentSection = ''; // To store the ID of the current section in view
-            const sections = document.querySelectorAll('section[id]'); // Get all sections with an ID
+            let currentSection = '';
+            const sections = document.querySelectorAll('section[id]');
             
-            // Determine current scroll position, accounting for header height
-            const scrollPosition = (typeof window.pageYOffset !== 'undefined' ? window.pageYOffset : document.documentElement.scrollTop) + headerHeight + 20; 
+            // Add/remove scrolled class to header (if needed for styling)
+            // if (window.scrollY > 50) {
+            //     header.classList.add('scrolled');
+            // } else {
+            //     header.classList.remove('scrolled');
+            // }
 
-            // Iterate over sections to find which one is currently in view
+            const scrollPosition = window.scrollY + headerHeight + 20; // Adjusted offset
+
             sections.forEach(section => {
-                const sectionTop = section.offsetTop; // Top offset of the section
-                const sectionHeight = section.offsetHeight; // Height of the section
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
                 if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    currentSection = section.getAttribute('id'); // Set current section ID
+                    currentSection = section.getAttribute('id');
                 }
             });
 
-             // Handle edge cases for the top of the page or when scrolled to the very bottom
-            if (scrollPosition < sections[0]?.offsetTop + headerHeight) { // If near the top, before the first section
+             // Handle edge case for top of page or bottom
+            if (scrollPosition < sections[0]?.offsetTop + headerHeight) {
                  currentSection = sections[0]?.getAttribute('id') || ''; 
-            } else if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) { // If near the bottom of the page
+            } else if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) { // Near bottom
                  currentSection = sections[sections.length - 1]?.getAttribute('id') || ''; 
             }
 
-            // Update navigation link styles based on the current section
+
             navLinks.forEach(link => {
-                link.classList.remove('text-cyan-400', 'font-semibold'); // Remove active styles
+                link.classList.remove('text-cyan-400', 'font-semibold'); // Remove active style
                 link.classList.add('text-gray-300'); // Ensure default style is present
 
-                if (link.getAttribute('href') === `#${currentSection}`) { // If link matches current section
+                if (link.getAttribute('href') === `#${currentSection}`) {
                     link.classList.remove('text-gray-300');
-                    link.classList.add('text-cyan-400', 'font-semibold'); // Add active styles
+                    link.classList.add('text-cyan-400', 'font-semibold'); // Add active style
                 }
             });
         });
+        
+        // Initial check
+        window.dispatchEvent(new Event('scroll'));
 
     </script>
 
