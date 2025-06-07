@@ -42,6 +42,11 @@
                         0 0 15px rgba(96, 165, 250, 0.2),
                         inset 0 0 3px rgba(96, 165, 250, 0.3);
         }
+        .neon-border-glow-green {
+             box-shadow: 0 0 8px rgba(52, 211, 153, 0.4), /* emerald-400 */
+                         0 0 15px rgba(52, 211, 153, 0.2),
+                         inset 0 0 3px rgba(52, 211, 153, 0.3);
+        }
 
         /* Card hover effect - Reverted to simpler version */
         .tech-card-hover {
@@ -112,10 +117,10 @@
             transform: scale(1.05); /* Simpler scale */
         }
         .cta-button-secondary:hover {
-             transform: scale(1.05); /* Simpler scale */
+            transform: scale(1.05); /* Simpler scale */
         }
         .contact-button:hover {
-             transform: scale(1.05); /* Simpler scale */
+            transform: scale(1.05); /* Simpler scale */
         }
 
         /* Skill Tag Polish - Reverted to simpler hover */
@@ -150,6 +155,7 @@
             <a href="#" class="text-2xl font-medium text-white font-code hover:text-cyan-400 transition duration-300 neon-glow-cyan">HKC<span class="text-cyan-400">.hack</span></a>
             <div class="hidden md:flex space-x-8">
                 <a href="#about" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300 font-medium">/about</a>
+                <a href="#certifications" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300 font-medium">/certs</a>
                 <a href="#education" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300 font-medium">/education</a>
                 <a href="#projects" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300 font-medium">/projects</a>
                 <a href="#skills" class="nav-link text-gray-300 hover:text-cyan-400 transition duration-300 font-medium">/skills</a>
@@ -166,6 +172,7 @@
         </nav>
         <div id="mobile-menu" class="md:hidden border-t border-gray-700/50">
             <a href="#about" class="block py-3 px-6 text-gray-300 hover:bg-gray-700 hover:text-cyan-400 transition duration-300 font-medium">/about</a>
+            <a href="#certifications" class="block py-3 px-6 text-gray-300 hover:bg-gray-700 hover:text-cyan-400 transition duration-300 font-medium">/certs</a>
             <a href="#education" class="block py-3 px-6 text-gray-300 hover:bg-gray-700 hover:text-cyan-400 transition duration-300 font-medium">/education</a>
             <a href="#projects" class="block py-3 px-6 text-gray-300 hover:bg-gray-700 hover:text-cyan-400 transition duration-300 font-medium">/projects</a>
             <a href="#skills" class="block py-3 px-6 text-gray-300 hover:bg-gray-700 hover:text-cyan-400 transition duration-300 font-medium">/skills</a>
@@ -175,7 +182,7 @@
     </header>
 
     <section id="hero" class="relative text-white py-32 md:py-48 overflow-hidden min-h-screen flex items-center">
-         <div class="absolute inset-0 bg-gray-900 z-0"></div> 
+        <div class="absolute inset-0 bg-gray-900 z-0"></div> 
         <div class="container mx-auto px-6 text-center relative z-10">
             <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-5 fade-in-element stagger-1 text-gray-100">Hemantha Krishna Challa</h1>
             <p class="text-xl md:text-3xl mb-10 text-cyan-400 font-code fade-in-element stagger-2 neon-glow-cyan">
@@ -184,7 +191,7 @@
             <a href="#projects" class="cta-button-hero inline-flex items-center bg-cyan-500 text-gray-900 font-semibold py-3 px-8 rounded-md hover:bg-cyan-400 transition duration-300 shadow-lg shadow-cyan-500/30 text-lg fade-in-element stagger-3">
                 Explore Projects
                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                   <path stroke-linecap="round" stroke-linejoin="round" d="M17 13l-5 5m0 0l-5-5m5 5V6" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 13l-5 5m0 0l-5-5m5 5V6" />
                  </svg>
             </a>
         </div>
@@ -195,17 +202,17 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-100 tech-section-heading fade-in-element">Whoami</h2>
             <div class="bg-gray-800 p-8 md:p-10 rounded-lg shadow-xl neon-border-glow-blue flex flex-col lg:flex-row items-center gap-8 lg:gap-12 fade-in-element stagger-1">
                  <img src="IMG-20240922-WA0012(1).jpg" alt="Hemantha Krishna Challa" class="w-40 h-40 md:w-48 md:h-48 rounded-full mx-auto lg:mx-0 flex-shrink-0 object-cover border-4 border-blue-500 shadow-md fade-in-element stagger-2"
-                       onerror="this.onerror=null; this.src='https://placehold.co/200x200/1F2937/9CA3AF?text=Photo';">
+                      onerror="this.onerror=null; this.src='https://placehold.co/200x200/1F2937/9CA3AF?text=Photo';">
                 <div class="text-center lg:text-left">
                     <p class="text-gray-300 leading-relaxed mb-4 text-lg fade-in-element stagger-3">
                         Hello! I'm Krishna, and I am a motivated Master's student in Computer Science at UT Dallas, specializing in Cybersecurity (expected graduation: May 2026, GPA 3.67).
                     </p>
                     <p class="text-gray-300 leading-relaxed mb-6 text-lg fade-in-element stagger-4">
-                        I have a strong foundation in cybersecurity principles (Network Security, IDS, Vulnerability Assessment), programming (Python, Java, C++), and full-stack web development (React, Node.js). I've demonstrated my practical skills through projects like an encrypted file system and secure web applications, complemented by published research in ML for MEC and Intrusion Detection. Seeking challenging opportunities to apply and expand technical expertise. I'm currently studying for CompTIA Security+ certification.
+                        I have a strong foundation in cybersecurity principles (Network Security, IDS, Vulnerability Assessment), programming (Python, Java, C++), and full-stack web development (React, Node.js). I've demonstrated my practical skills through projects like an encrypted file system and secure web applications, complemented by published research in ML for MEC and Intrusion Detection. Seeking challenging opportunities to apply and expand technical expertise.
                     </p>
                     <a href="Resume.pdf" target="_blank" rel="noopener noreferrer" class="cta-button-secondary inline-flex items-center mt-4 bg-blue-600 text-white font-medium py-2.5 px-6 rounded-md hover:bg-blue-500 transition duration-300 fade-in-element stagger-5">
                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                           <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                          </svg>
                          View Resume.pdf
                     </a>
@@ -214,7 +221,29 @@
         </div>
     </section>
 
-    <section id="education" class="py-24">
+    <section id="certifications" class="py-24">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-100 tech-section-heading fade-in-element">Certifications</h2>
+            <div class="bg-gray-800 p-8 rounded-lg shadow-xl neon-border-glow-green fade-in-element stagger-1 max-w-3xl mx-auto flex flex-col sm:flex-row items-center text-center sm:text-left gap-6 sm:gap-8">
+                <div class="flex-shrink-0">
+                    <img src="https://images.credly.com/images/80d8a06a-c384-42bf-ad36-db81bce5adce/blob" alt="CompTIA Security+ Certification Badge" class="w-24 h-24">
+                </div>
+                <div class="flex-grow">
+                    <h3 class="text-2xl font-semibold text-green-400 font-code mb-2">CompTIA Security+</h3>
+                    <p class="text-gray-300 text-lg mb-3">Issued by CompTIA</p>
+                    <p class="text-gray-400 text-sm mb-4">Demonstrates baseline skills necessary to perform core security functions and pursue an IT security career.</p>
+                    <a href="https://www.credly.com/badges/6733cbf4-31aa-423e-a3a9-7f41409405bb" target="_blank" rel="noopener noreferrer" class="cta-button-secondary inline-flex items-center mt-2 bg-green-600 text-white font-medium py-2 px-5 rounded-md hover:bg-green-500 transition duration-300 fade-in-element stagger-2 text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                        Verify Credential
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="py-24 bg-gray-800/50 border-t border-b border-gray-700/50">
         <div class="container mx-auto px-6 max-w-5xl">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-100 tech-section-heading fade-in-element">Education</h2>
             <div class="space-y-12">
@@ -240,7 +269,7 @@
         </div>
     </section>
 
-    <section id="projects" class="py-24 bg-gray-800/50 border-t border-b border-gray-700/50">
+    <section id="projects" class="py-24">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-100 tech-section-heading fade-in-element">./Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -307,7 +336,7 @@
 
                 <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden tech-card-hover flex flex-col fade-in-element stagger-5">
                      <img src="https://placehold.co/600x400/0F172A/6366F1?text=PhotoShare" alt="Photo Sharing App" class="w-full h-52 object-cover opacity-80"
-                           onerror="this.onerror=null; this.src='https://placehold.co/600x400/0F172A/cccccc?text=Project+Image';">
+                          onerror="this.onerror=null; this.src='https://placehold.co/600x400/0F172A/cccccc?text=Project+Image';">
                     <div class="p-6 flex flex-col flex-grow">
                          <h3 class="text-xl font-semibold mb-2 text-indigo-400 font-code">Photo Sharing App</h3>
                         <p class="text-gray-400 mb-4 text-sm flex-grow">Full-stack MERN app with secure user auth, session management, and input validation.</p>
@@ -453,26 +482,26 @@
                         </div>
                     </div>
                     <div class="fade-in-element stagger-7">
-                        <h3 class="skill-heading text-purple-400">Certifications & Additional</h3>
+                        <h3 class="skill-heading text-purple-400">Additional Skills</h3>
                         <div class="skill-list">
-                            <span>CompTIA Security+ (In Progress)</span><span>OWASP Top 10</span><span>Soft Skills</span><span>Languages: English, Telugu, Hindi, Japanese (elementary)</span>
+                            <span>OWASP Top 10</span><span>Soft Skills</span><span>Languages: English, Telugu, Hindi, Japanese (elementary)</span>
                         </div>
                     </div>
                 </div>
                 <style>
                      .skill-heading { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem; font-family: 'Fira Code', monospace; }
                      .skill-list span {
-                         display: inline-block; background-color: #374151; /* gray-700 */ color: #d1d5db; /* gray-300 */
-                         padding: 6px 14px; border-radius: 6px; margin: 5px; font-size: 0.9rem;
-                         border: 1px solid #4b5563; /* gray-600 */
-                         transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+                          display: inline-block; background-color: #374151; /* gray-700 */ color: #d1d5db; /* gray-300 */
+                          padding: 6px 14px; border-radius: 6px; margin: 5px; font-size: 0.9rem;
+                          border: 1px solid #4b5563; /* gray-600 */
+                          transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
                      }
                      .skill-list span:hover { 
-                         background-color: #4b5563; /* gray-500 */
-                         border-color: #22d3ee; /* cyan-400 */
-                         color: #fff; 
-                         transform: translateY(-2px);
-                         box-shadow: 0 0 10px rgba(34, 211, 238, 0.3);
+                          background-color: #4b5563; /* gray-500 */
+                          border-color: #22d3ee; /* cyan-400 */
+                          color: #fff; 
+                          transform: translateY(-2px);
+                          box-shadow: 0 0 10px rgba(34, 211, 238, 0.3);
                      }
                 </style>
             </div>
@@ -524,7 +553,7 @@
                  <a href="https://tryhackme.com/p/CrispyLeaf" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-red-500 social-icon-hover" title="TryHackMe Profile">
                      <span class="sr-only">TryHackMe</span>
                      <svg class="w-9 h-9" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                         <path d="M6.5 10.75h11v2.5h-4.25V19h-2.5v-5.75H6.5v-2.5z M12 5c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm0 12c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/>
+                          <path d="M6.5 10.75h11v2.5h-4.25V19h-2.5v-5.75H6.5v-2.5z M12 5c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm0 12c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/>
                      </svg>
                  </a>
             </div>
@@ -552,8 +581,8 @@
             link.addEventListener('click', () => {
                 // Add a small delay to allow navigation before closing
                 setTimeout(() => {
-                   mobileMenu.classList.remove('open');
-                   menuButton.setAttribute('aria-expanded', 'false');
+                    mobileMenu.classList.remove('open');
+                    menuButton.setAttribute('aria-expanded', 'false');
                 }, 150);
             });
         });
@@ -610,20 +639,13 @@
         // --- Nav Link Active State (Basic Example) ---
         // More robust implementation would use Intersection Observer API
         const navLinks = document.querySelectorAll('.nav-link');
-        const header = document.getElementById('main-header'); // Use ID for header
+        const header = document.querySelector('header'); // Simplified selector
         const headerHeight = header?.offsetHeight || 60; // Get header height or default
 
         window.addEventListener('scroll', () => {
             let currentSection = '';
             const sections = document.querySelectorAll('section[id]');
             
-            // Add/remove scrolled class to header (if needed for styling)
-            // if (window.scrollY > 50) {
-            //     header.classList.add('scrolled');
-            // } else {
-            //     header.classList.remove('scrolled');
-            // }
-
             const scrollPosition = window.scrollY + headerHeight + 20; // Adjusted offset
 
             sections.forEach(section => {
@@ -635,25 +657,25 @@
             });
 
              // Handle edge case for top of page or bottom
-            if (scrollPosition < sections[0]?.offsetTop + headerHeight) {
-                 currentSection = sections[0]?.getAttribute('id') || ''; 
+            if (scrollPosition < (sections[0]?.offsetTop || 0)) {
+                 currentSection = ''; // No active section at the very top
             } else if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) { // Near bottom
                  currentSection = sections[sections.length - 1]?.getAttribute('id') || ''; 
             }
 
-
             navLinks.forEach(link => {
                 link.classList.remove('text-cyan-400', 'font-semibold'); // Remove active style
-                link.classList.add('text-gray-300'); // Ensure default style is present
+                link.classList.add('text-gray-300', 'font-medium'); // Ensure default style is present
 
-                if (link.getAttribute('href') === `#${currentSection}`) {
-                    link.classList.remove('text-gray-300');
+                // Check if the link's href matches the current section, or if no section is active for the "about" link as a default
+                if (link.getAttribute('href') === `#${currentSection}` || (!currentSection && link.getAttribute('href') ==='#about')) {
+                    link.classList.remove('text-gray-300', 'font-medium');
                     link.classList.add('text-cyan-400', 'font-semibold'); // Add active style
                 }
             });
         });
         
-        // Initial check
+        // Initial check on load
         window.dispatchEvent(new Event('scroll'));
 
     </script>
